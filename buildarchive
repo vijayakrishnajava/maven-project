@@ -42,5 +42,12 @@ pipeline {
 
         }
 
+        stage('deploy in staging') {
+
+            steps {
+
+                build job: 'deploy-to-tomcat'
+            }
+        }
     }
 }

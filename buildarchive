@@ -51,13 +51,13 @@ pipeline {
         stage('deploy in staging') {
             steps {
                 echo 'cleaning tomcat temp dir'
-                sh 'rm -rf ${param.TOMCAT_HOME}/temp/*.*'
+                sh 'rm -rf ${params.TOMCAT_HOME}/temp/*.*'
                 echo 'cleaning tomcat work dir'
-                sh 'rm -rf ${param.TOMCAT_HOME}/work/*.*'
+                sh 'rm -rf ${params.TOMCAT_HOME}/work/*.*'
                 echo 'cleaning tomcat log dir'
-                sh 'rm -rf ${param.TOMCAT_HOME}/logs/*.*'
+                sh 'rm -rf ${params.TOMCAT_HOME}/logs/*.*'
                 echo 'copying the new war file'
-                sh 'cp **/target/wepapp.war ${param.TOMCAT_HOME}/wepapps'  
+                sh 'cp **/target/wepapp.war ${params.TOMCAT_HOME}/wepapps'  
             }
         }
 

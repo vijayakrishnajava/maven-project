@@ -54,8 +54,9 @@ pipeline {
                 sh "rm -rf ${params.TOMCAT_HOME}/temp/*.*"
                 echo 'cleaning tomcat work dir'
                 sh "rm -rf ${params.TOMCAT_HOME}/work/*.*"
-                echo 'cleaning tomcat log dir'
-                sh "rm -rf ${params.TOMCAT_HOME}/logs/*.*"
+                echo 'cleaning tomcat webapp dir'
+               sh "rm -rf ${params.TOMCAT_HOME}/webapps/webapp.war"
+               sh "rm -rf ${params.TOMCAT_HOME}/webapps/webapp"
                 echo 'copying the new war file'
                 sh "cp **/target/wepapp.war ${params.TOMCAT_HOME}/wepapps"  
             }

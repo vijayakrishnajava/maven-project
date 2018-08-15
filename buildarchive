@@ -47,7 +47,7 @@ pipeline {
 
         }
 
-parallel {
+
         stage('deploy in staging') {
             steps {
                 echo 'cleaning tomcat temp dir'
@@ -83,6 +83,6 @@ parallel {
 
             
         }
-    }
+
     }
 }

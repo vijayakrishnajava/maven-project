@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     parameters {
-        string(name:'TOMCAT_HOME', defaultValue:'C:/wellness/apache-tomcat-8.5.8')
+        string(name:'TOMCAT_HOME', defaultValue:'C://wellness//apache-tomcat-8.5.8')
     }
 
     stages {
@@ -51,7 +51,7 @@ pipeline {
         stage('deploy in staging') {
             steps {
                 echo 'cleaning tomcat temp dir'
-                sh 'rm -rf ${params.TOMCAT_HOME}/temp/*.*'
+                sh "rm -rf ${params.TOMCAT_HOME}/temp/*.*"
                 echo 'cleaning tomcat work dir'
                 sh 'rm -rf ${params.TOMCAT_HOME}/work/*.*'
                 echo 'cleaning tomcat log dir'

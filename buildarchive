@@ -58,7 +58,8 @@ pipeline {
                sh "rm -rf ${params.TOMCAT_HOME}/webapps/webapp.war"
                sh "rm -rf ${params.TOMCAT_HOME}/webapps/webapp"
                 echo 'copying the new war file'
-                sh "cp ./webapp/target/wepapp.war ${params.TOMCAT_HOME}/wepapps"  
+                def workspace = pwd()
+                sh "cp ${workspace}/webapp/target/wepapp.war ${params.TOMCAT_HOME}/wepapps"  
             }
         }
 
